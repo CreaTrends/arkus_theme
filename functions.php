@@ -79,10 +79,23 @@ if ( ! function_exists( 'arkus_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		add_image_size( 'arkus-blog-image', 1140, 760, true );
+		add_image_size( 'arkus-slider', 1200, 500, true );
+		add_image_size( 'arkus-portrait', 500, 700, true );
+		add_image_size( 'arkus-testimonial-portrait', 260, 300, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'arkus_setup' );
 
+
+function add_file_types_to_uploads($file_types){
+$new_filetypes = array();
+$new_filetypes['svg'] = 'image/svg+xml';
+$file_types = array_merge($file_types, $new_filetypes );
+return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -120,11 +133,17 @@ add_action( 'widgets_init', 'arkus_widgets_init' );
  * Enqueue scripts and styles.
  */
 function arkus_scripts() {
+
+
 	wp_enqueue_style( 'arkus-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'arkus-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'arkus-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'jquery');
+
+	wp_enqueue_script( 'staconstanza-appjs', get_template_directory_uri() . '/assets/js/dist/app.min.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -132,6 +151,11 @@ function arkus_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'arkus_scripts' );
 
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/class.php';
 /**
  * Implement the Custom Header feature.
  */
@@ -152,16 +176,13 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/arkusclass.php';
-
 // Register Custom Navigation Walker
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+// Register Custom post types
+require get_template_directory() . '/inc/cpt_customs.php';
 
 
-new creatrendstheme();
+
 
 /**
  * Load Jetpack compatibility file.
