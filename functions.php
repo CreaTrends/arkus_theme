@@ -84,6 +84,7 @@ if ( ! function_exists( 'arkus_setup' ) ) :
 		add_image_size( 'arkus-slider', 1200, 500, true );
 		add_image_size( 'arkus-portrait', 500, 700, true );
 		add_image_size( 'arkus-testimonial-portrait', 260, 300, true );
+		add_image_size( 'arkus-feature', 400, 300, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'arkus_setup' );
@@ -151,7 +152,57 @@ function arkus_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'arkus_scripts' );
 
+function ultrabootstrap_widgets_init() {
+		
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'ultrabootstrap' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 
+	register_sidebar( array(
+			'name'          => __('Footer One','ultrabootstrap'),
+			'id'            => 'footer-1',
+			'class'         => 'nasdasdasd asdfasdf',
+			'description'   => __('Footer First Widget','ultrabootstrap'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer Two','ultrabootstrap'),
+			'id'            => 'footer-2',
+			'description'   => __('Footer Second Widget','ultrabootstrap'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer There','ultrabootstrap'),
+			'id'            => 'footer-3',
+			'description'   => __('Footer Third Widget','ultrabootstrap'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	register_sidebar( array(
+			'name'          => __('Footer Four','ultrabootstrap'),
+			'id'            => 'footer-4',
+			'description'   => __('Footer Four Widget','ultrabootstrap'),
+			'before_widget' => '<div id="%1$s" class="widget col-md-3 col-sm-6 %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+}
+add_action( 'widgets_init', 'ultrabootstrap_widgets_init' );
 /**
  * Customizer additions.
  */
@@ -190,4 +241,15 @@ require get_template_directory() . '/inc/cpt_customs.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+//Filtering a Class in Navigation Menu Item
+function add_class_to_menu_item($item_output, $item, $depth, $args)
+{
+    if( 60 == $item->ID ) {
+        return str_replace('<a', '<a class="btn btn-primary"', $item_output);
+    }
+    return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'add_class_to_menu_item', 10, 4);
 

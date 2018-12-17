@@ -26,18 +26,19 @@
   .navbar-nav {
     .dropdown-menu  {
       .nav-item {
-      .nav-link {
-        font-size: .90em;
-        font-weight: 600;
-        padding: 0.75em 0;
-        letter-spacing: 1px;
-        color: $title-grey;
-        @include menu-font;
-        &.active,
-        &:hover {
-          color: $primary;
+        .nav-link {
+          font-size: .90em;
+          font-weight: 600;
+          padding: 0.75em 0;
+          letter-spacing: 0px;
+          color: $title-grey;
+          @include menu-font;
+          &.active,
+          &:hover {
+            color: $primary;
+          }
         }
-      }
+      
     }
 
     }
@@ -46,12 +47,24 @@
         font-size: 1em;
         font-weight: 600;
         padding: 0.75em 0;
-        letter-spacing: 1px;
+        letter-spacing: 0px;
         color: white;
         @include menu-font;
         &.active,
         &:hover {
           color: $primary;
+        }
+      }
+      &.btn-quote-top {
+        background-color: $color1 !important;
+        border-radius: 5px;
+        
+        .nav-link {
+          color: $white !important;
+          &.active,
+          &:hover {
+            color: $white !important;
+          }
         }
       }
     }
@@ -79,6 +92,7 @@
           padding: 1.1em 1em !important;
 
         }
+
       }
     }
     &.navbar-shrink {
@@ -96,6 +110,7 @@
           padding: 1.1em 1em !important;
           color: $title-grey;
         }
+
       }
     }
     }

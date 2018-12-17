@@ -85,7 +85,7 @@ section {
 // Button Styles
 .btn {
   @include menu-font;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .btn-xl {
@@ -120,7 +120,7 @@ img::-moz-selection {
     font-size: 18px;
     font-weight: 600;
     position: relative;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
     margin-bottom: 20px;
     text-transform: uppercase;
     &:after{
@@ -159,11 +159,16 @@ img::-moz-selection {
 
 .footer {
 
-    position: absolute;
+    
     bottom: 0;
     width: 100%;
     line-height: 60px;
-    background-color: #9C27B0;
+    background-color: #2b363c;
+    color: $white;
+    padding: 5rem 1rem;
+    dl  {
+      line-height: initial !important;
+    }
     .site-footer {
 
     }

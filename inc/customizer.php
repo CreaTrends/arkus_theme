@@ -223,6 +223,109 @@ function theme_welcome_section($wp_customize){
     'section' => 'welcome_text',
     'settings' => 'default_thumbnail',
     ))
+    ); 
+    /*************** ABOUT US ***************/
+      /**********************************************/
+
+      $wp_customize->add_section('aboutus_text',array(
+        'priority' => 60,
+        'title' => __('About Us Section','ultrabootstrap'),
+        'description' => __('Write Some Words for About Section in Homepage','ultrabootstrap'),
+        'panel' => 'theme_option'
+      ));
+
+      $wp_customize->add_setting(
+        'aboutus_textbox1',
+          array(
+            'sanitize_callback' => 'ultrabootstrap_sanitize_text',
+            'default' => 'ABOUT US BOOTSTRAP THEME',
+          )
+      );
+
+      $wp_customize->add_control(
+        'aboutus_textbox1',
+          array(
+          'label' => __('Welcome Heading','ultrabootstrap'),
+          'section' => 'aboutus_text',
+          'settings' => 'aboutus_textbox1',
+          'type' => 'text',
+         )
+      );
+
+      $wp_customize->add_setting(
+        'aboutus_textbox2',
+          array(
+            'sanitize_callback' => 'ultrabootstrap_sanitize_text',
+            'default' => 'FREE RESPONSIVE, MULTIPURPOSE BUSINESS AND CORPORATE THEME PERFECT FOR ANY ONE',
+          )
+      );
+
+      $wp_customize->add_control(
+        'aboutus_textbox2',
+          array(
+          'label' => __('Welcome Second Heading','ultrabootstrap'),
+          'section' => 'aboutus_text',
+          'settings' => 'aboutus_textbox2',
+          'type' => 'text',
+         )
+      );
+
+
+      $wp_customize->add_setting( 
+        'aboutus_textarea_setting' ,
+          array(
+            'sanitize_callback' => 'ultrabootstrap_sanitize_text',
+            'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 
+        )); 
+   
+      $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'aboutus_textarea_setting', array( 
+        'label' => __( 'Welcome Text Content', 'ultrabootstrap' ),
+        'section' => 'aboutus_text',
+        'settings' => 'aboutus_textarea_setting', 
+        'type'     => 'textarea', 
+        )));    
+
+
+      $wp_customize->add_section('content' , array(
+        'title' => __('Content','ultrabootstrap'),
+      ));
+
+
+      $wp_customize->add_setting(
+        'aboutus_button',
+            array(
+              'sanitize_callback' => 'esc_url_raw',
+              'default' => '#',
+          )
+      );
+
+      $wp_customize->add_control(
+        'aboutus_button',
+         array(
+          'label' => __('About Us Button Link','ultrabootstrap'),
+          'section' => 'aboutus_text',
+          'settings' => 'aboutus_button',
+          'type' => 'text',
+         )
+      );
+      $wp_customize->add_section('aboutus_default_thumbnail_section', array(
+        'priority' => 75,
+        "title" => 'Default Post Thumbnail',
+        "description" => __('Set default post thumbnail', 'ultrabootstrap'),
+        'panel' => 'theme_option'
+    ));
+    $wp_customize->add_setting('aboutus_default_thumbnail', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'esc_url_raw',
+        'capability' => 'edit_theme_options',
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control($wp_customize, 'aboutus_default_thumbnail', array(
+    'label' => __('Default Post Thumbnail', 'ultrabootstrap'),
+    'section' => 'aboutus_text',
+    'settings' => 'aboutus_default_thumbnail',
+    ))
     );   
     /**********************************************/
       /*************** FEATURES SECTION ****************/

@@ -43,8 +43,8 @@
   .btn {
     @extend %fade;
     $buttonColor: #fff;
-    font-size: 14px; @extend %lightTextColor; text-transform: uppercase; text-decoration: none;
-    padding: 15px 45px; margin: 0;
+    font-size: 14px; @extend %lightTextColor; text-transform: none; text-decoration: none;
+    padding: 10px 30px !important; margin: 0;
     border: none;
     background: $buttonColor;
     position: relative;
@@ -68,6 +68,7 @@
       $buttonColor: nth($className, 2);
       @extend %darkTextColor;
       background: $buttonColor;
+
       &:hover {
         @extend %darkTextColor;
         background: lighten($buttonColor, 10%);

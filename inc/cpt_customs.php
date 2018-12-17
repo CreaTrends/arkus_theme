@@ -94,16 +94,170 @@ function create_proyectos_tax() {
 }
 add_action( 'init', 'create_proyectos_tax' );
 
+class destacarMetabox {
+    private $screen = array(
+        'proyecto',
+    );
+    private $meta_fields = array(
+        array(
+            'label' => 'Destacado',
+            'id' => 'proyecto_destacado',
+            'type' => 'select',
+            'options' => array(
+                'No Destacado',
+                'Destacado',
+            ),
+        ),
+        array(
+            'label' => 'Subtitulo',
+            'id' => 'proyecto_subtitulo',
+            'default' => '( Tipo de proyecto )',
+            'type' => 'text',
+        ),
+        array(
+            'label' => 'Fecha de Proyecto',
+            'id' => 'proyecto_fecha',
+            'type' => 'date',
+        ),
+        array(
+            'label' => 'Cliente',
+            'id' => 'proyecto_cliente',
+            'type' => 'text',
+        ),
+        array(
+            'label' => 'Video',
+            'id' => 'youtube_video',
+            'type' => 'text',
+        ),
+    );
+    public function __construct() {
+        add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+        add_action( 'save_post', array( $this, 'save_fields' ) );
+    }
+    public function add_meta_boxes() {
+        foreach ( $this->screen as $single_screen ) {
+            add_meta_box(
+                'destacar',
+                __( 'Destacar', 'textdomain' ),
+                array( $this, 'meta_box_callback' ),
+                $single_screen,
+                'normal',
+                'core'
+            );
+        }
+    }
+    public function meta_box_callback( $post ) {
+        wp_nonce_field( 'destacar_data', 'destacar_nonce' );
+        $this->field_generator( $post );
+    }
+    public function field_generator( $post ) {
+        $output = '';
+        foreach ( $this->meta_fields as $meta_field ) {
+            $label = '<label for="' . $meta_field['id'] . '">' . $meta_field['label'] . '</label>';
+            $meta_value = get_post_meta( $post->ID, $meta_field['id'], true );
+            if ( empty( $meta_value ) ) {
+                $meta_value = $meta_field['default']; }
+            switch ( $meta_field['type'] ) {
+                case 'select':
+                    $input = sprintf(
+                        '<select id="%s" name="%s">',
+                        $meta_field['id'],
+                        $meta_field['id']
+                    );
+                    foreach ( $meta_field['options'] as $key => $value ) {
+                        $meta_field_value = !is_numeric( $key ) ? $key : $value;
+                        $input .= sprintf(
+                            '<option %s value="%s">%s</option>',
+                            $meta_value === $meta_field_value ? 'selected' : '',
+                            $meta_field_value,
+                            $value
+                        );
+                    }
+                    $input .= '</select>';
+                    break;
+                default:
+                    $input = sprintf(
+                        '<input %s id="%s" name="%s" type="%s" value="%s">',
+                        $meta_field['type'] !== 'color' ? 'style="width: 100%"' : '',
+                        $meta_field['id'],
+                        $meta_field['id'],
+                        $meta_field['type'],
+                        $meta_value
+                    );
+            }
+            $output .= $this->format_rows( $label, $input );
 
+
+        }
+        $tbody = "<tr><td>".getFeaturedVideo( $post->ID, 260, 120)."</td></tr>";
+        echo '<table class="form-table"><tbody>' . $output .$tbody.'</tbody></table>';
+    }
+    public function format_rows( $label, $input ) {
+        return '<tr><th>'.$label.'</th><td>'.$input.'</td></tr>';
+    }
+    public function save_fields( $post_id ) {
+        if ( ! isset( $_POST['destacar_nonce'] ) )
+            return $post_id;
+        $nonce = $_POST['destacar_nonce'];
+        if ( !wp_verify_nonce( $nonce, 'destacar_data' ) )
+            return $post_id;
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+            return $post_id;
+        foreach ( $this->meta_fields as $meta_field ) {
+            if ( isset( $_POST[ $meta_field['id'] ] ) ) {
+                switch ( $meta_field['type'] ) {
+                    case 'email':
+                        $_POST[ $meta_field['id'] ] = sanitize_email( $_POST[ $meta_field['id'] ] );
+                        break;
+                    case 'text':
+                        $_POST[ $meta_field['id'] ] = sanitize_text_field( $_POST[ $meta_field['id'] ] );
+                        break;
+                }
+                update_post_meta( $post_id, $meta_field['id'], $_POST[ $meta_field['id'] ] );
+            } else if ( $meta_field['type'] === 'checkbox' ) {
+                update_post_meta( $post_id, $meta_field['id'], '0' );
+            }
+        }
+    }
+}
+if (class_exists('destacarMetabox')) {
+    new destacarMetabox;
+};
+
+/**/
+function galley_cpt_box( $meta_boxes ) {
+    $prefix = 'prefix-';
+
+    $meta_boxes[] = array(
+        'id' => 'untitled',
+        'title' => esc_html__( 'Agregar Imagenes', 'metabox-online-generator' ),
+        'post_types' => array('post', 'page','proyecto' ),
+        'context' => 'advanced',
+        'priority' => 'default',
+        'autosave' => 'false',
+        'fields' => array(
+            array(
+                'id' => $prefix . 'image_advanced_1',
+                'type' => 'image_advanced',
+                'name' => esc_html__( 'Image Advanced', 'metabox-online-generator' ),
+                'force_delete' => 'true',
+            ),
+        ),
+    );
+
+    return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'galley_cpt_box' );
 // Register Custom Post Type Servicio
 // Post Type Key: servicio
+// Register Custom Post Type Servicio
 function create_servicio_cpt() {
 
     $labels = array(
-        'name' => __( 'Servicios', 'Post Type General Name', 'textdomain' ),
-        'singular_name' => __( 'Servicio', 'Post Type Singular Name', 'textdomain' ),
-        'menu_name' => __( 'Servicios', 'textdomain' ),
-        'name_admin_bar' => __( 'Servicio', 'textdomain' ),
+        'name' => _x( 'Servicios', 'Post Type General Name', 'textdomain' ),
+        'singular_name' => _x( 'Servicio', 'Post Type Singular Name', 'textdomain' ),
+        'menu_name' => _x( 'Servicios', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar' => _x( 'Servicio', 'Add New on Toolbar', 'textdomain' ),
         'archives' => __( 'Servicio Archives', 'textdomain' ),
         'attributes' => __( 'Servicio Attributes', 'textdomain' ),
         'parent_item_colon' => __( 'Parent Servicio:', 'textdomain' ),
@@ -130,29 +284,63 @@ function create_servicio_cpt() {
     );
     $args = array(
         'label' => __( 'Servicio', 'textdomain' ),
-        'description' => __( 'Servicios ', 'textdomain' ),
+        'description' => __( 'Servicios', 'textdomain' ),
         'labels' => $labels,
-        'menu_icon' => 'dashicons-admin-post',
-        'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'post-formats', 'custom-fields', ),
-        'taxonomies' => array(),
-        'public' => false,
+        'menu_icon' => 'dashicons-tag',
+        'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'post-formats', 'custom-fields'),
+        'taxonomies' => array('servicios_cat'),
+        'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 5,
         'show_in_admin_bar' => true,
         'show_in_nav_menus' => true,
         'can_export' => true,
-        'has_archive' => false,
-        'hierarchical' => false,
-        'exclude_from_search' => false,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'exclude_from_search' => true,
         'show_in_rest' => true,
         'publicly_queryable' => true,
-        'capability_type' => 'page',
+        'capability_type' => 'post',
     );
     register_post_type( 'servicio', $args );
 
 }
 add_action( 'init', 'create_servicio_cpt', 0 );
+// Register Taxonomy Servicio Category
+function create_serviciocategory_tax() {
+
+    $labels = array(
+        'name'              => _x( 'servicios categories', 'taxonomy general name', 'textdomain' ),
+        'singular_name'     => _x( 'Servicio Category', 'taxonomy singular name', 'textdomain' ),
+        'search_items'      => __( 'Search servicios categories', 'textdomain' ),
+        'all_items'         => __( 'All servicios categories', 'textdomain' ),
+        'parent_item'       => __( 'Parent Servicio Category', 'textdomain' ),
+        'parent_item_colon' => __( 'Parent Servicio Category:', 'textdomain' ),
+        'edit_item'         => __( 'Edit Servicio Category', 'textdomain' ),
+        'update_item'       => __( 'Update Servicio Category', 'textdomain' ),
+        'add_new_item'      => __( 'Add New Servicio Category', 'textdomain' ),
+        'new_item_name'     => __( 'New Servicio Category Name', 'textdomain' ),
+        'menu_name'         => __( 'Servicio Category', 'textdomain' ),
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => __( '', 'textdomain' ),
+        'hierarchical' => false,
+        'public' => false,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => false,
+        'show_tagcloud' => false,
+        'show_in_quick_edit' => true,
+        'show_admin_column' => false,
+        'show_in_rest' => true,
+    );
+    register_taxonomy( 'serviciocategory', array('servicio'), $args );
+
+}
+add_action( 'init', 'create_serviciocategory_tax' );
 
 /***/
 // Custom Post types for Feature project on home page 
@@ -493,3 +681,5 @@ function create_slider_location_tax() {
         )
     );
 }
+
+

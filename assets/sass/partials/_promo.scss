@@ -1,0 +1,47 @@
+.al-cta {
+    background: #f7f7f7;
+    @include menu-font;
+    padding: 100px 0;
+
+    .al-cta-box h2 {
+        color: #424242;
+        font-size: 42px;
+        font-weight: 900;
+
+
+        & .al-cta-box p {
+            color: #dcdcdc;
+            font-size: 22px;
+        }
+
+        & .al-cta-box .btn {
+            border-radius: 30px;
+        }
+    }
+    .media-body {
+     h5{
+       @include menu-font;
+       font-weight: 700;
+       font-size: 1.1rem   
+     }
+     
+    }
+
+    // media icons 
+    .promo-icon {
+
+        background-color: $color1;
+        /* padding: 2rem; */
+        border-radius: 100%;
+        font-size: 2.2rem;
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+
+        &>i {
+            color: $white;
+        }
+    }
+
+}

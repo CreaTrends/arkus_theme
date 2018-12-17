@@ -26,6 +26,7 @@ $cyan:    #17a2b8 !default;
 $menu-bg :rgba(48, 76, 41, .90) !important;
 $title-dark :#4a606b !default;
 $title-grey : #607D8B;
+
 //Button Colors
 
 $color1: rgba(252, 10, 50, 1);
@@ -41,7 +42,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $purple !default;
-
+$darkblue : #0074a6;
 
 $buttonColors: (
     primary :  $color1, 
@@ -53,3 +54,5 @@ $buttonColors: (
     primaryColor :  $color1, 
     secondaryColor :  $color2
 );
+
+$fa-font-path:        "./assets/css/fontawesome-free/webfonts";

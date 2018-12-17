@@ -15,21 +15,41 @@
 
 	<footer id="colophon" class="footer site-footer" style="">
 		<div class="container">
-			<div class="row">
-				<div class="col-4">col 1</div>
-				<div class="col-4">col 2</div>
-				<div class="col-4">col 3</div>
+			<div class="row justify-content-between">
+				<div class="col-12 col-md-3 mr-3">
+					<img src="http://localhost:3000/arkus/wp-content/uploads/2018/11/logo.svg" alt="" class="img-fluid mw-25">
+					<dl>
+					<dd class="text-white my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</dd>
+				</dl>
+				</div>
+				<div class="col-12 col-md-4">
+					<h4 class="widget-title">Sevicios</h4>
+					<dl>
+						<dt>Instalación</dt>
+						<dt>Mantención E Informes</dt>
+						<dt>Bombas de agua</dt>
+						<dt>Instalación</dt>
+						<dt>Mantención E Informes</dt>
+						<dt>Bombas de agua</dt>
+					</dl>
+				</div>
+				<div class="col-4 col-md-4">
+					<h4 class="widget-title">Contacto</h4>
+					<dl>
+						<dt>Teléfono : +569123456</dt>
+						
+						<dt>Email : contacto@arkus.cl</dt>
+						
+						<dt>Dirección : Alameda #1234</dt>
+						
+					</dl>
+				</div>
+				
 			</div>
-			<div class="row">
+			<hr>
+			<div class="row justify-content-center text-center">
 				<div class="col-12">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'arkus' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'arkus' ), 'WordPress' );
-				?>
-				</a>
-				<span class="sep"> | </span>
-					<?php echo __('Theme Ultrabootstrap by','ultrabootstrap'); ?> <a href="https://phantomthemes.com"><?php echo __('Phantom Themes','ultrabootstrap'); ?></a>
+				Copyright © Arkus 2018 All Right Reserved
 				</div>
 			</div>
 			
