@@ -66,7 +66,7 @@ get_header(); ?>
     </div>
 </header>
 <!-- welcome -->
-<section class="welcome pb-0" id="welcome">
+<section class="welcome pb-5 pb-md-0" id="welcome">
     <div class="container">
         <div class="row">
             
@@ -83,7 +83,7 @@ get_header(); ?>
                     <?php _e('Read More','ultrabootstrap'); ?>
                 </a>
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-6 d-none d-md-block  ">
                 <img class="featurette-image img-fluid mx-auto" src="<?php echo esc_attr(get_theme_mod( 'default_thumbnail')); ?>" alt="Product 1">
             </div>
             
@@ -97,7 +97,7 @@ get_header(); ?>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-3">
-                <div class="media">
+                <div class="media mb-3">
                     <div class="promo-icon mr-3">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
@@ -108,7 +108,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <div class="media">
+                <div class="media mb-3">
                     <div class="promo-icon mr-3">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
@@ -119,7 +119,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <div class="media">
+                <div class="media mb-3">
                     <div class="promo-icon mr-3">
                         <i class="fas fa-headset"></i>
                     </div>
@@ -130,7 +130,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <div class="media">
+                <div class="media mb-3">
                     <div class="promo-icon mr-3">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -169,14 +169,14 @@ get_header(); ?>
 <section id="services">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mb-5">
                 <h2 class="section-title mb-4">Conoce Nuestros servicios.</h2>
                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 <a href="#" title="Read More" class="btn btn-primaryColor">Nuestros servicios</a>
             </div>
             <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
-                    <div class="col-6 mb-2">
+                    <div class="col-12 col-md-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
@@ -189,7 +189,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-2">
+                    <div class="col-12 col-md-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
@@ -202,7 +202,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-2">
+                    <div class="col-12 col-md-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
@@ -215,7 +215,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 mb-2">
+                    <div class="col-12 col-md-6 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
