@@ -77,3 +77,6 @@ gulp.task('js', function(){
 
 
 gulp.task('default',['sass', 'browser-sync','watch','images', 'js']);
+
+gulp.task("dev", ['sass','images', 'js']);
+

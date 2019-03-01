@@ -100,25 +100,15 @@ get_header(); ?>
 
 <section class="al-cta" id="info">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-3">
-                <div class="media mb-3">
-                    <div class="promo-icon mr-3">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div class="media-body">
-                        <h5 class="mt-0">Lun-Vier: 08:00 - 18:00</h5>
-                        Servicio de emergencia
-                    </div>
-                </div>
-            </div>
+        <div class="row justify-content-center">
+            
             <div class="col-12 col-lg-3">
                 <div class="media mb-3">
                     <div class="promo-icon mr-3">
                         <i class="fas fa-clipboard-list"></i>
                     </div>
                     <div class="media-body">
-                        <h5 class="mt-0">Inspeccion & Informes</h5>
+                        <h5 class="mt-0">Inspección & Informes</h5>
                         Informes Certificados 
                     </div>
                 </div>
@@ -129,7 +119,7 @@ get_header(); ?>
                         <i class="fas fa-headset"></i>
                     </div>
                     <div class="media-body">
-                        <h5 class="mt-0">Llamanos al +5691234567</h5>
+                        <h5 class="mt-0">Llamanos al +56 9 489 2516</h5>
                         De Lunes a Viernes 08:00 Hrs a 18:00 Hrs
                     </div>
                 </div>
@@ -140,7 +130,7 @@ get_header(); ?>
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="media-body">
-                        <h5 class="mt-0">Agenda Tu Hora</h5>
+                        <h5 class="mt-0">Agenda tu visita técnica</h5>
                         De Lunes a Viernes 08:00 Hrs a 18:00 Hrs
                     </div>
                 </div>
@@ -177,7 +167,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-12 col-md-4 mb-5">
                 <h2 class="section-title mb-4">Conoce Nuestros servicios.</h2>
-                <span class="mb-4">Contamos con una gama de servicios para satisfacer la demanda de nuestros clientes , y asi poder ofrecer Tranquilidad y confianza para tu empresa. </span>
+                <span class="mb-4">Contamos con una gama de servicios para satisfacer la demanda de nuestros clientes , y así poder ofrecer Tranquilidad y confianza para tu empresa.</span>
                 <a href="#contact" title="Read More" class="btn btn-primaryColor mt-4 js-scroll-trigger">Contáctanos </a>
             </div>
             <div class="col-12 col-md-8">
@@ -227,7 +217,7 @@ get_header(); ?>
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Instalaciones</h4>
+                                    <h4 class="heading-icon ">Instalaciones / Puesta en marcha </h4>
                                     
                                   </div>
                                 </div>
@@ -240,7 +230,7 @@ get_header(); ?>
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Puesta en marcha</h4>
+                                    <h4 class="heading-icon ">Contrato de mantenimiento con servicio de emergencia 24/7</h4>
                                     
                                   </div>
                                 </div>
@@ -252,7 +242,7 @@ get_header(); ?>
                             <div class="card-body">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h4 class="heading-icon">asesorías técnicas</h4>
+                                        <h4 class="heading-icon">Asesorías técnicas</h4>
                                         
                                     </div>
                                 </div>
@@ -275,7 +265,7 @@ get_header(); ?>
             <div class="col-lg-12 text-center">
                 <small class="small-line line-center">Portafolio</small>
                 <h2 class="section-title mb-4">Nuestros proyectos</h2>
-                <h3 class="section-subheading text-muted">Aliquam interdum volutpat lectus at tincidunt. In ut dapibus leo. Nam at lectus sit amet tortor lacinia euismod eu a est. Donec rutrum neque eleifend egestas aliquet. Aenean non viverra arcu, </h3>
+                <h3 class="section-subheading text-muted">Conoce alguno de nuestros proyectos mas destacados. </h3>
             </div>
         </div>
         <div class="row">
@@ -348,52 +338,26 @@ get_header(); ?>
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Contáctanos</h2>
-          <h3 class="section-subheading text-muted">Si tienes alguna duda o consulta solo escribenos .</h3>
+          <h3 class="section-subheading text-muted">Si tienes alguna duda o consulta solo escríbenos .</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-8">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar Mensaje</button>
-              </div>
-            </div>
-          </form>
+          <?php echo do_shortcode('[wpforms id="85" title="false" description="false"]');?>
         </div>
         <div class="col-lg-4">
             
             <dl>
                 <dt>Contacto General</dt>
-                <dd><a href="mailto:contacto@arkus.cl">contacto@arkus.cl</a></dd>
-                <dd>+56 9 489 2516</dd>
+                <dd>
+                    <a href="mailto:arkus@arkus.cl">arkus@arkus.cl</a>
+                </dd>
+                <dd>+56 9 9489 2516</dd>
                 <dt>Fernando Calvo</dt>
                 <dd>Jefe de Servicio Técnico</dd>
-                <dd><a href="mailto:fcalvo@arkus.cl">fcalvo@arkus.cl</a></dd>
                 <dd>+56 9 9489 2516</dd>
                 <dt>Luis Morales</dt>
                 <dd>Jefe de Operaciones</dd>
-                <dd><a href="mailto:lmorales@arkus.cl">lmorales@arkus.cl</a></dd>
                 <dd>+56 9 5352 2508</dd>
               </dl>
         </div>
@@ -451,6 +415,7 @@ get_header(); ?>
                             <?php
                             $images = rwmb_meta( 'prefix-image_advanced_1', array( 'size' => 'arkus-feature' ) );
                             ?>
+                            <p><?php the_content();?></p>
                             <div class="container-fluid mt-3">
                                 <div class="row">
                                 <?php 
@@ -464,7 +429,7 @@ get_header(); ?>
                             </div>
                             </div>
                                 
-                            <p><?php the_content();?></p>
+                            
                             <ul class="list-inline">
                                 <?php if(get_post_meta( get_the_ID(),'proyecto_fecha',true)){?>
                                 <li>Fecha: <?php echo get_post_meta( get_the_ID(),'proyecto_fecha',true);?></li>

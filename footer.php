@@ -19,26 +19,31 @@
 				<div class="col-12 col-md-3 mr-3">
 					<img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg';?>" alt="" class="img-fluid mw-25">
 					<dl>
-					<dd class="text-white my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</dd>
+					<dd class="text-white my-4">Mantenimiento de Equipos de Bombeo, Bombas centrifugas de Incendio (NFPA-25), Bombas de Procesos y de alta capacidad.</dd>
 				</dl>
 				</div>
 				<div class="col-12 col-md-4">
 					<h4 class="widget-title">Sevicios</h4>
 					<dl>
-						<dt>Instalación</dt>
-						<dt>Mantención E Informes</dt>
-						<dt>Bombas de agua</dt>
-						<dt>Instalación</dt>
-						<dt>Mantención E Informes</dt>
-						<dt>Bombas de agua</dt>
+						<dt>- Mantenimiento Preventivo y correctivo</dt>
+						<dt>- Evaluación de equipos</dt>
+						<dt>- Sustitución de equipos</dt>
+						<dt>- Instalaciones / Puesta en marcha</dt>
+						<dt>- Contrato de mantenimiento con servicio de emergencia 24/7</dt>
+						<dt>- Asesorías técnicas</dt>
 					</dl>
 				</div>
 				<div class="col-4 col-md-4">
 					<h4 class="widget-title">Contacto</h4>
 					<dl>
-						<dt>Teléfono : <a href="tel:+56 9 489 2516">+56 9 489 2516</a></dt>
+						<dt>Teléfono : <a href="tel:+56 9 9489 2516">+56 9 9489 2516</a></dt>
 						
-						<dt>Email : <a href="mailto:contacto@arkus.cl">contacto@arkus.cl</a></dt>
+						<dt>Email : <a href="mailto:arkus@arkus.cl">arkus@arkus.cl</a></dt>
+						<div class="promo-icon mr-3">
+                        <a href="https://www.linkedin.com/company/arkus-spa/" target="_blank" class="mt-3 d-block">
+                        	<img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/linkedin_circle-48.png" alt="">
+                        </a>
+                    </div>
 						
 					</dl>
 				</div>
