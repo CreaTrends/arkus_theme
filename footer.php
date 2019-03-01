@@ -36,11 +36,9 @@
 				<div class="col-4 col-md-4">
 					<h4 class="widget-title">Contacto</h4>
 					<dl>
-						<dt>Teléfono : +569123456</dt>
+						<dt>Teléfono : <a href="tel:+56 9 489 2516">+56 9 489 2516</a></dt>
 						
-						<dt>Email : contacto@arkus.cl</dt>
-						
-						<dt>Dirección : Alameda #1234</dt>
+						<dt>Email : <a href="mailto:contacto@arkus.cl">contacto@arkus.cl</a></dt>
 						
 					</dl>
 				</div>

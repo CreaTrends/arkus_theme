@@ -178,7 +178,7 @@ get_header(); ?>
             <div class="col-12 col-md-4 mb-5">
                 <h2 class="section-title mb-4">Conoce Nuestros servicios.</h2>
                 <span class="mb-4">Contamos con una gama de servicios para satisfacer la demanda de nuestros clientes , y asi poder ofrecer Tranquilidad y confianza para tu empresa. </span>
-                <a href="#contact" title="Read More" class="btn btn-primaryColor mt-4 js-scroll-trigger">Contactanos </a>
+                <a href="#contact" title="Read More" class="btn btn-primaryColor mt-4 js-scroll-trigger">Contáctanos </a>
             </div>
             <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
