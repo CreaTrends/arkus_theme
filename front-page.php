@@ -8,6 +8,11 @@
 get_header(); ?>
 <style type="text/css" id="custom-background-css-override">
         .about-us:after { background-image: url('<?php echo esc_attr(get_theme_mod( 'aboutus_default_thumbnail')); ?>'); }
+        .welcome {
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+        }
     </style>
 <!-- welcome message -->
 <header id="slider-masthead" class="carousel slide carousel-fade masthead">
@@ -66,7 +71,7 @@ get_header(); ?>
     </div>
 </header>
 <!-- welcome -->
-<section class="welcome pb-5 pb-md-0" id="welcome">
+<section class="welcome pb-5 pb-md-0" id="welcome" >
     <div class="container">
         <div class="row">
             
@@ -79,8 +84,8 @@ get_header(); ?>
                 <p class="mb-2">
                     <?php echo esc_attr(get_theme_mod( 'textarea_setting', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' )); ?>
                 </p>
-                <a href="<?php echo esc_attr(get_theme_mod( 'welcome_button', '#' )); ?>" title="Read More" class="btn btn-primary">
-                    <?php _e('Read More','ultrabootstrap'); ?>
+                <a href="<?php echo esc_attr(get_theme_mod( 'welcome_button', '#' )); ?>" title="Read More" class="js-scroll-trigger btn btn-primary">
+                    <?php _e('Conocenos','ultrabootstrap'); ?>
                 </a>
             </div>
             <div class="col-md-6 d-none d-md-block  ">
@@ -158,72 +163,98 @@ get_header(); ?>
                 <p class=" text-white">
                     <?php echo esc_attr(get_theme_mod( 'aboutus_textarea_setting', 'texto aqui' )); ?>
                 </p>
-                <a href="<?php echo esc_attr(get_theme_mod( 'welcome_button', '#' )); ?>" title="Read More" class="btn btn-secondaryColor">
-                    <?php _e('Read More','ultrabootstrap'); ?>
+                <a href="<?php echo esc_attr(get_theme_mod( 'aboutus_button', '#' )); ?>" title="Read More" class="js-scroll-trigger btn btn-secondaryColor">
+                    <?php _e('Nuestros Servicios','ultrabootstrap'); ?>
                 </a>
             </div>
         </div>
     </div>
 </section>
 <!-- Services -->
+
 <section id="services">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 mb-5">
                 <h2 class="section-title mb-4">Conoce Nuestros servicios.</h2>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                <a href="#" title="Read More" class="btn btn-primaryColor">Nuestros servicios</a>
+                <span class="mb-4">Contamos con una gama de servicios para satisfacer la demanda de nuestros clientes , y asi poder ofrecer Tranquilidad y confianza para tu empresa. </span>
+                <a href="#contact" title="Read More" class="btn btn-primaryColor mt-4 js-scroll-trigger">Contactanos </a>
             </div>
             <div class="col-12 col-md-8">
                 <div class="row justify-content-between">
-                    <div class="col-12 col-md-6 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Informes Certificados</h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis
+                                    <h4 class="heading-icon ">Mantenimiento Preventivo y correctivo</h4>
+                                    
                                   </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Informes Certificados</h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    <h4 class="heading-icon ">Evaluación de equipos</h4>
+                                    
                                   </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Informes Certificados</h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    <h4 class="heading-icon ">Sustitución de equipos</h4>
+                                    
                                   </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 mb-2">
+                    <div class="col-12 col-md-4 mb-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="media">
                                   
                                   <div class="media-body">
-                                    <h4 class="heading-icon ">Informes Certificados</h4>
-                                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                    <h4 class="heading-icon ">Instalaciones</h4>
+                                    
                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media">
+                                  
+                                  <div class="media-body">
+                                    <h4 class="heading-icon ">Puesta en marcha</h4>
+                                    
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 mb-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="heading-icon">asesorías técnicas</h4>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -308,6 +339,71 @@ get_header(); ?>
         </div>
     </div>
 </section>
+
+
+
+<!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Contáctanos</h2>
+          <h3 class="section-subheading text-muted">Si tienes alguna duda o consulta solo escribenos .</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar Mensaje</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+            
+            <dl>
+                <dt>Contacto General</dt>
+                <dd><a href="mailto:contacto@arkus.cl">contacto@arkus.cl</a></dd>
+                <dd>+56 9 489 2516</dd>
+                <dt>Fernando Calvo</dt>
+                <dd>Jefe de Servicio Técnico</dd>
+                <dd><a href="mailto:fcalvo@arkus.cl">fcalvo@arkus.cl</a></dd>
+                <dd>+56 9 9489 2516</dd>
+                <dt>Luis Morales</dt>
+                <dd>Jefe de Operaciones</dd>
+                <dd><a href="mailto:lmorales@arkus.cl">lmorales@arkus.cl</a></dd>
+                <dd>+56 9 5352 2508</dd>
+              </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
 <?php
     $args = array(
         'post_type' => 'proyecto',

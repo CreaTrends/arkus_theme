@@ -72,7 +72,6 @@ gulp.task('js', function(){
     'node_modules/jquery.easing/jquery.easing.min.js',
     'assets/js/dev/**/*.js'
   ]).pipe(concat('app.min.js'))
-    .pipe(uglify())
     .pipe(gulp.dest('./assets/js/dist/'))
 });
 

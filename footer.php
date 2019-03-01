@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-12 col-md-3 mr-3">
-					<img src="http://localhost:3000/arkus/wp-content/uploads/2018/11/logo.svg" alt="" class="img-fluid mw-25">
+					<img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg';?>" alt="" class="img-fluid mw-25">
 					<dl>
 					<dd class="text-white my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</dd>
 				</dl>
